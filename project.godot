@@ -18,6 +18,13 @@ _global_script_class_icons={
 config/name="Godot_Aula_01"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+window/size/borderless=true
+
 [input]
 
 ui_left={
@@ -51,4 +58,4 @@ ui_down={
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://new_env.tres"
