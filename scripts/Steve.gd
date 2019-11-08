@@ -5,7 +5,8 @@ extends KinematicBody
 # var b = "text"
 var playerName = "player"
 var velocity = Vector3(0,0,0)
-var SPEED = 20
+const SPEED = 20
+const ROT_SPEED = 7
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,20 +22,24 @@ func _physics_process(delta):
 	#pass
 	#print(playerName)
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
-		velocity.x = SPEED
+		velocity.x = 0
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
+		$MeshInstance.rotate_z(deg2rad(-ROT_SPEED));
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
+		$MeshInstance.rotate_z(deg2rad(ROT_SPEED));
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.1)
 	
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_down"):
-		velocity.z = SPEED
+		velocity.z = 0
 	elif Input.is_action_pressed("ui_up"):
 		velocity.z = -SPEED
+		$MeshInstance.rotate_x(deg2rad(-ROT_SPEED));
 	elif Input.is_action_pressed("ui_down"):
 		velocity.z = SPEED
+		$MeshInstance.rotate_x(deg2rad(ROT_SPEED));
 	else:
 		velocity.z = lerp(velocity.z, 0, 0.1)
 		
