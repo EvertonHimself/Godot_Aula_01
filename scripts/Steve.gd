@@ -32,6 +32,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.1)
 	
+	# Faz o jogador ir para frente.
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_down"):
 		velocity.z = 0
 	elif Input.is_action_pressed("ui_up"):
